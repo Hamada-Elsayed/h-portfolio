@@ -3,23 +3,72 @@
   background-color: var(--main-color);
   background-color: #1f2938;
   height: 100vh;
-  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
 
   .about-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   
     .about-text {
       padding: 50px;
-      margin-top: 100px;
+      text-align: center;
+
+      h3 {
+        background-color: white;
+        padding: 5px 10px;
+        text-align: center;
+      }
+      p{
+        color: rgb(184, 182, 182);
+      }
+    }
+
+
+
+    .about-img{
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+
+      h3{
+        padding-top: 10px;
+        margin-top: 10px;
+      }
+
+
+
+      img{
+        position: relative;
+        width:288px;
+        height: 288px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                    rgba(0, 0, 0, 0.09) 0px -3px 5px;    
+      }
     }
     
-    p{
-      max-width: 550px;
+    .p-one{
+      max-width: 500px;
+      margin: auto;
+      color: rgb(184, 182, 182);
+      font-size: 18px;
+      padding-bottom: 10px;
     }
+    .p-tow {
+      max-width: 400px;
+      margin: auto;
+      color: rgb(184, 182, 182);
+      font-size: 18px;
+    }
+
+    
   }
 
 }
@@ -27,102 +76,75 @@
 
 
 
-
-.stage-cube-cont {
-  width: 50%;
-  height: 100%;
-  top: 0;
-  padding-top: 18%;
-  margin-left: 0;
-  position: absolute;
-  right: 0;
-  overflow: hidden;
-}
-
-.cubespinner {
-  animation-name: spincube;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 12s;
-  transform-style: preserve-3d;
-  transform-origin: 100px 100px 0;
-  margin-left: calc(50% - 100px);
-
-  div {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.4);
-    text-align: center;
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 20px 0px lightyellow;
-  }
-
-  .face1 {
-    transform: translateZ(100px);
-    color: #dd0031;
-  }
-  .face2 {
-    transform: rotateY(90deg) translateZ(100px);
-    color: #f06529;
-  }
-  .face3 {
-    transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
-    color: #28a4d9;
-  }
-  .face4 {
-    transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
-    color: #5ed4f4;
-  }
-  .face5 {
-    transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
-    color: #efd81d;
-  }
-  .face6 {
-    transform: rotateX(-90deg) translateZ(100px);
-    color: #ec4d28;
-  }
-}
-
-@keyframes spincube {
-  from,
-  to {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  16% {
-    transform: rotateY(-90deg) rotateZ(90deg);
-  }
-  33% {
-    transform: rotateY(-90deg) rotateX(90deg);
-  }
-  50% {
-    transform: rotateY(-180deg) rotateZ(90deg);
-  }
-  66% {
-    transform: rotateY(-270deg) rotateX(90deg);
-  }
-  83% {
-    transform: rotateX(90deg);
-  }
-}
-
-@media (max-width:767px) {
-  .about{
-    margin-left: 0;
-  }
-  
-}
 
 @media(max-width:767px){
+  .about {
+    padding-top: 80px;
+    margin-left: 0;
+    height: auto;
+    align-items: stretch;
+  }
+  .about .about-section{
+    display: grid;
+  }
   .about  .about-section .about-text{
-    margin-top: 20px;
-    padding: 50px 30px;
+    padding:20px 10px;
   }
-  .about-antimation{
-    display: none;
-  }
+
+}
+
+
+
+
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+.rainbow {
+  position: relative;
+  z-index: 0;
+  width:300px;
+  height: 300px;
+  box-shadow: rgb(93 158 238 / 16%) 0px 54px 55px, rgb(89 138 248 / 33%) 0px -12px 30px, rgb(97 161 243 / 30%) 0px 4px 6px, rgb(97 122 247 / 17%) 0px 12px 13px, rgb(100 143 251 / 11%) 0px -3px 5px;
+
+  overflow: hidden;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-color: #399953;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: linear-gradient(#3c89f5, #3c89f5), linear-gradient(rgb(40 56 83), rgb(40 56 83)), linear-gradient(#d53e33, #d53e33), linear-gradient(rgb(40 56 83), rgb(40 56 83));
+		animation: rotate 4s linear infinite;
+	}
+	
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 6px;
+		top: 6px;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background: white;
+		border-radius: 5px;
+	}
 }

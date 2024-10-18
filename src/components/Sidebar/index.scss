@@ -20,7 +20,7 @@
 
   .img{
     position: relative;
-    width: 60px;
+    width: 40px;
   }
 }
 .responsive-bar {
@@ -32,6 +32,7 @@
   position: relative;
   margin-top: 70px;
 
+
   ul{
     margin: 0;
     padding: 0;
@@ -40,7 +41,57 @@
   }
 
   ul li {
-    margin-top: 20px;
+    margin:27px 0;
+  }
+
+  .link-design {
+    text-align:center;
+    display: grid;
+    align-items: center;
+    text-decoration: none;
+
+    svg{
+      font-size: 20px;
+      margin: auto;
+
+    }
+
+    p{
+      opacity: 0;
+      position: absolute;
+      right: 17px;
+      margin: 0;
+      font-weight: 450;
+      color: rgb(184, 182, 182);
+      transition: .5s ease;
+    }
+  }
+
+  .link-design:hover{
+    svg{
+      opacity: 0;
+      color: white;
+      transition: .5s ease;
+    }
+    p{
+      opacity: 100;
+      color: white;
+      transition: .5s ease;
+    }
+
+  }
+
+  .social-icon:hover{
+    svg{
+      color: white;
+    }
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    margin: 0 5px;
+    display: flex;
   }
 
 
@@ -59,42 +110,36 @@
 
   }
   .nav .logo{
+    margin-left: 10px;
     padding-top: 0;
     margin-bottom: 0;
   }
   .navlinks{
-    display: flex;
-    justify-content: space-between;
+
     margin: 0;
   }
-  ul{
-    display: flex;
-    align-items: center;
-  }
-  ul li {
-    margin-top: 0;
-    margin: 10px;
-  }
+
 
 
   
 }
 
-@media (max-width:460px) {
+@media (max-width:767px) {
   .nav{
     overflow: visible;
+  }
+
+  .social {
+    display: none;
+
   }
 
   .container-navlinks{
     position: absolute;
     right:0;
     top: 10%;
-    height: 200px;
     width: 100%;
     background-color: rgb(3 9 19 / 90%);
-        overflow-y: scroll;
-    display: grid;
-    align-items: start;
     justify-content: start;
     z-index: 11111111;
   }
@@ -103,8 +148,12 @@
   }
 
   .navlinks>ul {
-    display: grid;
+    display: flex;
     flex-direction: colum;
+
+    li {
+      margin: 20px;
+    }
   }
   
 
@@ -116,5 +165,19 @@
     cursor: pointer;
 
   }
+  .navlinks .link-design p {
+
+    right: inherit;
+    display: none;
+
 }
+.navlinks .link-design:hover{
+  svg{
+    opacity: 100;
+    color: white;
+    transition: .5s ease;
+  }
+
+
+}}
 
